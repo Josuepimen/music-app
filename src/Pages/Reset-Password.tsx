@@ -1,4 +1,3 @@
-// src/Pages/ResetPassword.tsx
 import { useState } from 'react';
 import AuthTemplate from '../Components/Auth-template';
 import { useSearchParams } from 'react-router-dom';
@@ -7,17 +6,41 @@ export default function ResetPassword() {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [params] = useSearchParams();
-  const token = params.get('token');
+  const token = params.get('token'); // Token extraído del link por correo
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (password !== confirm) {
       alert('Las contraseñas no coinciden');
       return;
     }
 
-    // Aquí envías el `token` y `password` a tu backend
-    alert('Contraseña actualizada exitosamente');
+    if (!token) {
+      alert('Token inválido o expirado');
+      return;
+    }
+
+    try {
+      // Aquí deberías enviar el token y la nueva contraseña a tu API
+      // Simulación de llamada a API
+      const response = await fetch('https://tu-api.com/reset-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, password }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al actualizar la contraseña');
+      }
+
+      alert('Contraseña actualizada exitosamente ✨');
+      // Redirigir al login si deseas:
+      // navigate('/login');
+    } catch (error) {
+      console.error(error);
+      alert('Ocurrió un error al actualizar la contraseña');
+    }
   };
 
   return (
