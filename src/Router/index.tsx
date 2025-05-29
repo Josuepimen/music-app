@@ -1,4 +1,4 @@
-// src/router/index.ts
+
 import { createBrowserRouter } from 'react-router-dom';
 import Login from '../Pages/Login';
 import Register from '../Pages/Register';

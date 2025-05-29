@@ -1,4 +1,4 @@
-// src/Pages/ForgotPassword.tsx
+
 import { useState } from 'react';
 import AuthTemplate from '../Components/Auth-template';
 

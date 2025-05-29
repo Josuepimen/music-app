@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaFacebookF, FaGoogle, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
 
+
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,7 +23,7 @@ export default function Login() {
     <div
       className="min-h-screen flex items-center justify-center text-white p-4"
       style={{
-        backgroundImage: `url('URL_DE_TU_IMAGEN_DE_FONDO')`,
+        backgroundImage: `url('')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.6)',
@@ -30,17 +31,16 @@ export default function Login() {
       }}
     >
       <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#333333]">
-        {/* Monstercat Logo Placeholder */}
-        <div className="flex justify-center mb-6"> {/* Espacio reducido */}
-          {/* Aquí puedes colocar tu SVG o componente de imagen para el logo de Monstercat */}
-          <img src="URL_DEL_LOGO_MONSTERCAT" alt="Monstercat Logo" className="h-14 w-auto" /> {/* Altura reducida */}
+
+        <div className="flex justify-center mb-6"> 
+       
+          <img src="URL_DEL_LOGO_NEXUS" alt="NEXUS Logo" className="h-14 w-auto" />
         </div>
 
-        <h1 className="text-2xl font-normal mb-1 text-center text-[#e0e0e0]"> {/* Tamaño y peso de fuente ajustados */}
+        <h1 className="text-2xl font-normal mb-1 text-center text-[#e0e0e0]"> 
           SIGN IN TO
         </h1>
-        <h1 className="text-3xl font-extrabold mb-6 text-center text-white"> {/* Tamaño ajustado */}
-          MONSTERCAT
+        <h1 className="text-3xl font-extrabold mb-6 text-center text-white"> 
         </h1>
 
         <p className="text-center text-[#999999] mb-6 text-sm"> 
@@ -52,7 +52,7 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4"> 
           <div>
-            <label htmlFor="email" className="block text-[#999999] text-xs font-semibold mb-1 uppercase"> {/* Espacio reducido */}
+            <label htmlFor="email" className="block text-[#999999] text-xs font-semibold mb-1 uppercase"> 
               Email Address
             </label>
             <input
@@ -67,7 +67,7 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-[#999999] text-xs font-semibold mb-1 uppercase"> {/* Espacio reducido */}
+            <label htmlFor="password" className="block text-[#999999] text-xs font-semibold mb-1 uppercase"> 
               Password
             </label>
             <div className="relative">
@@ -99,7 +99,7 @@ export default function Login() {
           </div>
         </form>
 
-        <div className="relative flex items-center justify-center my-6"> {/* Espacio reducido */}
+        <div className="relative flex items-center justify-center my-6"> 
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-[#333333]"></div>
           </div>
@@ -108,7 +108,7 @@ export default function Login() {
           </span>
         </div>
 
-        <div className="flex justify-center space-x-2"> {/* Espacio reducido */}
+        <div className="flex justify-center space-x-2"> 
           <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]"> {/* Tamaño reducido */}
             <FaFacebookF size={16} className="text-[#cccccc]" /> 
           </button>
