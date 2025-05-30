@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FaFacebookF, FaGoogle, FaTwitter, FaSpotify, FaApple } from 'react-icons/fa';
-
+import pianoImage from '../assets/piano.jpeg';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -23,36 +23,36 @@ export default function Login() {
     <div
       className="min-h-screen flex items-center justify-center text-white p-4"
       style={{
-        backgroundImage: `url('')`,
+        backgroundImage: `url(${pianoImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'darken',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
       }}
     >
-      <div className="bg-[#1a1a1a] p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#333333]">
-
-        <div className="flex justify-center mb-6"> 
-       
+      <div className="bg-[#1a1a1a]/90 p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#333333]">
+        <div className="flex justify-center mb-6">
           <img src="URL_DEL_LOGO_NEXUS" alt="NEXUS Logo" className="h-14 w-auto" />
         </div>
 
-        <h1 className="text-2xl font-normal mb-1 text-center text-[#e0e0e0]"> 
+        <h1 className="text-2xl font-normal mb-1 text-center text-[#e0e0e0]">
           SIGN IN TO
         </h1>
-        <h1 className="text-3xl font-extrabold mb-6 text-center text-white"> 
+        <h1 className="text-3xl font-extrabold mb-6 text-center text-white">
+          {/* la marca aquí falso */}
         </h1>
 
-        <p className="text-center text-[#999999] mb-6 text-sm"> 
+        <p className="text-center text-[#999999] mb-6 text-sm">
           Don't have an account?{' '}
-          <a href="#" className="text-[#00aaff] hover:underline">
+          <Link to="/register" className="text-[#00aaff] hover:underline">
             Create an account
-          </a>
+          </Link>
         </p>
 
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-4"> 
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
-            <label htmlFor="email" className="block text-[#999999] text-xs font-semibold mb-1 uppercase"> 
+            <label htmlFor="email" className="block text-[#999999] text-xs font-semibold mb-1 uppercase">
               Email Address
             </label>
             <input
@@ -67,7 +67,7 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-[#999999] text-xs font-semibold mb-1 uppercase"> 
+            <label htmlFor="password" className="block text-[#999999] text-xs font-semibold mb-1 uppercase">
               Password
             </label>
             <div className="relative">
@@ -81,49 +81,42 @@ export default function Login() {
                 required
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] cursor-pointer">
-                &#x1F441; 
+                &#x1F441;
               </span>
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-3"> 
-            <a href="#" className="text-[#999999] text-xs hover:underline">
+          <div className="flex justify-between items-center mt-3">
+            <Link to="/forgot-password" className="text-[#999999] text-xs hover:underline">
               Forgot Password?
-            </a>
+            </Link>
             <button
               type="submit"
-              className="bg-[#00aaff] hover:bg-[#0088cc] transition-colors p-2.5 px-6 rounded-md font-bold text-sm text-black uppercase tracking-wide" 
+              className="bg-[#00aaff] hover:bg-[#0088cc] transition-colors p-2.5 px-6 rounded-md font-bold text-sm text-black uppercase tracking-wide"
             >
               Sign In
             </button>
           </div>
         </form>
 
-        <div className="relative flex items-center justify-center my-6"> 
+        <div className="relative flex items-center justify-center my-6">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-[#333333]"></div>
           </div>
-          <span className="relative z-10 bg-[#1a1a1a] px-3 text-[#999999] uppercase text-xs font-semibold"> {/* Padding horizontal reducido */}
+          <span className="relative z-10 bg-[#1a1a1a] px-3 text-[#999999] uppercase text-xs font-semibold">
             Or Sign In With
           </span>
         </div>
 
-        <div className="flex justify-center space-x-2"> 
-          <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]"> {/* Tamaño reducido */}
-            <FaFacebookF size={16} className="text-[#cccccc]" /> 
-          </button>
-          <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]">
-            <FaGoogle size={16} className="text-[#cccccc]" />
-          </button>
-          <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]">
-            <FaTwitter size={16} className="text-[#cccccc]" />
-          </button>
-          <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]">
-            <FaSpotify size={16} className="text-[#cccccc]" />
-          </button>
-          <button className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]">
-            <FaApple size={16} className="text-[#cccccc]" />
-          </button>
+        <div className="flex justify-center space-x-2">
+          {[FaFacebookF, FaGoogle, FaTwitter, FaSpotify, FaApple].map((Icon, index) => (
+            <button
+              key={index}
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-[#2a2a2a] hover:bg-[#3a3a3a] transition-colors border border-[#3a3a3a]"
+            >
+              <Icon size={16} className="text-[#cccccc]" />
+            </button>
+          ))}
         </div>
       </div>
     </div>

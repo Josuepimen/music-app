@@ -6,7 +6,7 @@ export default function ResetPassword() {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [params] = useSearchParams();
-  const token = params.get('token'); 
+  const token = params.get('token'); // Token extraído del link por correo
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +22,8 @@ export default function ResetPassword() {
     }
 
     try {
-
+      // Aquí deberías enviar el token y la nueva contraseña a tu API
+      // Simulación de llamada a API
       const response = await fetch('https://tu-api.com/reset-password', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,7 +35,8 @@ export default function ResetPassword() {
       }
 
       alert('Contraseña actualizada exitosamente ✨');
-
+      // Redirigir al login si deseas:
+      // navigate('/login');
     } catch (error) {
       console.error(error);
       alert('Ocurrió un error al actualizar la contraseña');
