@@ -31,24 +31,16 @@ export default function Login() {
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
       }}
     >
-      <div className="bg-[#1a1a1a]/90 p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#333333]">
-        <div className="flex justify-center mb-6">
-          <img src="URL_DEL_LOGO_NEXUS" alt="NEXUS Logo" className="h-14 w-auto" />
+      <div className="bg-[#1a1a1a]/90 p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#333333] relative">
+        {/* Logo en la parte superior izquierda  */}
+        <div className=" top-2 left-2 ">
+          <img src="/src/assets/Logo (1).png" alt="Noxis Logo" className="h-12 w-auto" />
         </div>
 
-        <h1 className="text-2xl font-normal mb-1 text-center text-[#e0e0e0]">
-          SIGN IN TO
-        </h1>
-        <h1 className="text-3xl font-extrabold mb-6 text-center text-white">
-          {/* la marca aquí falso */}
+        <h1 className="text-4xl font-normal mb-1 text-right  text-[#e0e0e0]">
+          SIGN IN 
         </h1>
 
-        <p className="text-center text-[#999999] mb-6 text-sm">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-[#00aaff] hover:underline">
-            Create an account
-          </Link>
-        </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
@@ -83,6 +75,12 @@ export default function Login() {
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] cursor-pointer">
                 &#x1F441;
               </span>
+        <p className="text-center text-[#999999] mb-6 text-sm mt-2">
+          Don't have an account?{' '}
+          <Link to="/register" className="text-[#00aaff] hover:underline">
+            Create an account
+          </Link>
+        </p>
             </div>
           </div>
 
