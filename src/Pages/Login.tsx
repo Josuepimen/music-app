@@ -13,7 +13,7 @@ export default function Login() {
 
     if (email && password) {
       localStorage.setItem('user', JSON.stringify({ email }));
-      navigate('/dashboard');
+      navigate('/home'); // CAMBIO HECHO AQUÍ: antes decía "/dashboard"
     } else {
       alert('Por favor, completa todos los campos.');
     }
@@ -32,15 +32,13 @@ export default function Login() {
       }}
     >
       <div className="bg-[#1a1a1a]/90 p-8 rounded-lg shadow-2xl w-full max-w-md border border-[#333333] relative">
-        {/* Logo en la parte superior izquierda  */}
-        <div className=" top-2 left-2 ">
+        <div className="top-2 left-2">
           <img src="/src/assets/Logo (1).png" alt="Noxis Logo" className="h-12 w-auto" />
         </div>
 
-        <h1 className="text-4xl font-normal mb-1 text-right  text-[#e0e0e0]">
-          SIGN IN 
+        <h1 className="text-4xl font-normal mb-1 text-right text-[#e0e0e0]">
+          SIGN IN
         </h1>
-
 
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
@@ -72,15 +70,13 @@ export default function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 rounded-md bg-[#2a2a2a] text-white placeholder-[#666666] focus:outline-none focus:ring-2 focus:ring-[#00aaff] border border-[#3a3a3a] text-sm"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] cursor-pointer">
-            
-              </span>
-        <p className="text-center text-[#999999] mb-6 text-sm mt-2">
-          Don't have an account?{' '}
-          <Link to="/register" className="text-[#00aaff] hover:underline">
-            Create an account
-          </Link>
-        </p>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] cursor-pointer"></span>
+              <p className="text-center text-[#999999] mb-6 text-sm mt-2">
+                Don't have an account?{' '}
+                <Link to="/register" className="text-[#00aaff] hover:underline">
+                  Create an account
+                </Link>
+              </p>
             </div>
           </div>
 

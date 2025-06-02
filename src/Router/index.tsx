@@ -4,6 +4,7 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import ForgotPassword from '../Pages/Forgot-Password';
 import ResetPassword from '../Pages/Reset-Password';
+import HomePage from '../Pages/Home';
 
 export const router = createBrowserRouter([
   {
@@ -26,4 +27,9 @@ export const router = createBrowserRouter([
     path: '/reset-password',
     element: <ResetPassword />,
   },
+{
+    path: '/Home',
+    element: <HomePage />,
+  },
+
 ]);
