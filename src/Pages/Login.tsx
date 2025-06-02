@@ -51,10 +51,10 @@ export default function Login() {
               type="email"
               id="email"
               placeholder="Email address"
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 rounded-md bg-[#2a2a2a] text-white placeholder-[#666666] focus:outline-none focus:ring-2 focus:ring-[#00aaff] border border-[#3a3a3a] text-sm"
-              required
             />
           </div>
 
@@ -67,13 +67,13 @@ export default function Login() {
                 type="password"
                 id="password"
                 placeholder="Password"
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 rounded-md bg-[#2a2a2a] text-white placeholder-[#666666] focus:outline-none focus:ring-2 focus:ring-[#00aaff] border border-[#3a3a3a] text-sm"
-                required
               />
               <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666666] cursor-pointer">
-                &#x1F441;
+            
               </span>
         <p className="text-center text-[#999999] mb-6 text-sm mt-2">
           Don't have an account?{' '}
